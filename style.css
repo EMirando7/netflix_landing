@@ -1,0 +1,403 @@
+:root {
+  --primary-color: #e50914;
+  --dark-color: #141414;
+}
+
+* {
+  /* so that padding doesn't affect the sizing, in this case, at the border of the box */
+  box-sizing: border-box;
+  /* margin and padding at 0 work well with border-box */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  /* webkit used for chrome */
+  -webkit-font-smoothing: antialiased;
+  background-color: black;
+  color: #999;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,h2,h3,h4{
+  color: #fff;
+}
+
+a{
+  color: #fff;
+  text-decoration: none;
+}
+
+p{
+  margin: 0.5rem 0;
+}
+
+img{
+  width: 100%;
+}
+
+.showcase {
+  width: 100%;
+  /* explained as having 100 slices, 93vh refers to 93 slices of the height */
+  height: 93vh;
+  position: relative;
+  background: url("images/netflix_background.png") no-repeat center center/cover;
+}
+
+
+/* refers to the grayish color that covers the whole background picture, except the text and buttons */
+.showcase::after {
+  content: "";
+  /* we say absolute because we want it to be absolute, with no change regarding its children/parents */
+  position: absolute;
+  /* top and left denote from where the absolutivity starts, these say that from the very top left of the whole dom  */
+  top: 0;
+  left: 0;
+  /* encompass the whole width/height of the dom */
+  width: 100%;
+  height: 100%;
+  /* denotes the stack level of the element in rule, the higher the number, the closer this particular element is to you, from all the other elements in the stack */
+  z-index: 1;
+  /* gives that opacity that is distinctive of netflix sign up page */
+  background: rgba(0,0,0,0.6);
+  /* was noted twice for the left and right side respectively */
+  box-shadow: inset 120px 100px 250px #000000, inset 120px 100px 250px #000000;
+}
+
+
+.showcase-top{
+  position: relative;
+  height: 90px;
+  /* as noted in the :after selector, we don't want the text and the buttons to be covered by this opaque gray color, thus we bring it closer to use from a stack, noting it 2 z index instead of the color's 1 z index */
+  z-index: 2;
+
+}
+
+.showcase-top img{
+  width: 170px;
+  /* positioning inside of its closested parent element that has a relative position */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* translate literally moves the element top/bottom and left/right, respectively */
+  transform: translate(-50%, -50%);
+}
+
+.showcase-top a{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+
+}
+
+.showcase-content{
+  position: relative;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 9rem;
+  z-index: 2;
+}
+
+.showcase-content h1 {
+  font-weight: 700;
+  font-size: 5.2rem;
+  line-height: 1.1;
+  margin: 0 0 2rem;
+}
+
+.showcase-content p {
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 400;
+  font-size: 1.9rem;
+  line-height: 1.25;
+  margin: 0 0 2rem;
+}
+
+/* tabs>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* this is styling whats left from the 93vh the showcase had */
+.tabs{
+  background: var(--dark-color);
+  padding-top: 1rem;
+  border-bottom: 3x solid #3d3d3d;
+}
+
+.tabs p{
+  font-size: 1.2rem;
+  padding-top: 0.5rem
+}
+
+
+.tabs .container > div {
+  padding: 1.5rem;
+}
+/* makes the change when hover */
+.tabs .container > div:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+.tab-border {
+  border-bottom: var(--primary-color) 4px solid;
+}
+
+/* TAB CONTENT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.tab-content {
+  padding: 3rem 0;
+  background: #000;
+  color: #fff;
+}
+
+/* hide content by default/initially */
+#tab-1-content, #tab-2-content, #tab-3-content {
+  display: none;
+}
+/* this selector is for that single tab that had show class, for that is the default when entering page, the !important rule takes precedence over display: none on top */
+.show{
+  display: block !important;
+}
+
+#tab-1-content .tab-1-content-inner{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* this is for the top part of the tab content, the text and btn */
+#tab-2-content .tab-2-content-top{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/* now the bottom part of tab content, the pictures */
+
+#tab-2-content .tab-2-content-bottom{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+
+}
+
+.table {
+  width: 100%;
+  margin-top: 2rem;
+  /* makes the borders collapse */
+  border-collapse: collapse;
+  /* border spacing seeminly does nothing to this project */
+  border-spacing: 0;
+}
+
+.table thead th{
+  text-transform: uppercase;
+  padding: 0.8rem;
+}
+
+.table tbody tr td{
+  color: #999;
+  padding: 0.8rem 1.2rem;
+  text-align: center;
+}
+
+/* makes the first child be aligned to the left */
+.table tbody tr td:first-child{
+  text-align: left;
+}
+
+
+/* every odd child, will be background color 222 */
+.table tbody tr:nth-child(odd){
+  background: #222;
+}
+
+
+
+/* the way brad explained it was that when using grid, there are 2 components, the parent container that has the grid components and the grid items inside, in this case, we don't assign section .tabs to be the grid but .container */
+.tabs .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  /* as for the positioning rules, the only one that made any notable diff was the text-align */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* footer */
+.footer{
+  max-width: 75%;
+  margin: 1rem auto;
+  overflow: auto;
+}
+
+/* this has a comma because we want BOTH the .footer and .a from .footer...... as opposed to just putting a selector  of the latter */
+.footer, .footer a{
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.footer p{
+  margin-bottom: 1.5rem;
+}
+
+.footer .footer-cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+
+}
+
+.footer li{
+  line-height: 1.9;
+}
+/* UTLITLITY <><><><><><><><><><><><> */
+
+/* container */
+.container{
+  max-width: 70%;
+  margin:auto;
+  /* this property tells what to do when content inside is too big, in this casse, stay evertyhing to stay within container, rather, dont show the OVERFLOW of content*/
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+
+
+/* text styles */
+.text-xl{
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.text-md{
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.text-lg{
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-dark{
+ color:  #999;
+}
+/* buttons */
+.btn{
+  /* block makes it being able to add width and height */
+  display: inline-block;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  /* text inside the btn block */
+  text-align: center;
+  border: none;
+  /* the cursor changes when pointing at this parent element */
+  cursor: pointer;
+  margin-right: 0.5rem;
+  outline: none;
+  box-shadow: 0 1px 0 rgba(0,0,0, 0.45);
+  border-radius: 2px;
+}
+
+.btn:hover{
+  /* when cursor hovers,  the btn changes opacity to  denote the hovering */
+  opacity: 0.9;
+}
+
+.btn-rounded {
+  /* the difference between this btn-rounded and other btn is that we want this to be extra rounded, thus the higher border radius */
+  border-radius: 5px;
+}
+
+.btn-xl {
+  font-size: 2rem;
+  padding: 1.5rem 2.1rem;
+  text-transform: uppercase;
+}
+
+
+@media(max-width: 960px){
+  .showcase{
+    height: 70vh;
+  }
+
+
+/* when make window less than 960px width, the text on the icons disappears */
+  .hide-sm{
+    display: none;
+  }
+
+  .showcase-top img{
+    top: 30%;
+    left: 5%;
+    transform: translate(0);
+  }
+
+  .showcase-content h1{
+    font-size: 3.7rem;
+    line-height: 1;
+  }
+
+  .showcase-content p{
+    font-size: 1.5rem;
+
+  }
+/* makes the footer become 2 colums instead of 4 */
+  .footer .footer-cols{
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .btn-xl{
+    font-size: 1.5rem;
+    padding: 1.4rem 2rem;
+  }
+
+  .text-xl {
+    font-size: 1.5rem;
+  }
+
+  .text-lg {
+    font-size: 1.3rem;
+  }
+
+  .text-md {
+    font-size: 1rem;
+  }
+
+}
+
+@media(max-width: 700px){
+  #tab-1-content  .tab-1-content-inner{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  /* this particular media query stacks the contents of tab 2 bottom on top of each other by simply adding just 1 fraction instead of doing complicated grid columns */
+  #tab-2-content  .tab-2-content-bottom{
+    grid-template-columns: 1fr;
+  }
+}

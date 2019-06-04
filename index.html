@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://kit.fontawesome.com/c9f96bacbe.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Netflix - Watch TV Shows Online, Watch Movies Online </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- header: class.showcase -->
+  <!-- div: class.showcase-top -->
+
+  <!-- div: class.showcase-content -->
+  <!-- a.btn.btn-xl  For big button in middle for try free-->
+
+
+
+  <header class="showcase">
+    <!--the movie poster background is the WHOLE header, -->
+    <div class="showcase-top">
+      <!--top part of poster background: logo and signin button-->
+      <img src="images/logo.png" alt="Netflix" />
+      <a href="" class="btn btn-rounded">Sign In</a>
+    </div>
+    <!--observation: the top showcase was done with both the img and btn in same div, when this is done, both appear next to each other -->
+    <div class="showcase-content">
+      <h1>See what's next.</h1>
+      <p>Watch anywhere. Cancel anytime.</p>
+      <a href="#" class="btn btn-xl">
+        Try 30 days free <i class="fas fa-chevron-right btn-icon"></i>
+      </a>
+    </div>
+  </header>
+  <!-- Showcase HTML was finished then immidiately, the CSS was done, this point -->
+
+
+  <!-- SECOND PORTION OF THE PROJECT, starts ith tabs -->
+
+
+  <!-- tabs -->
+
+  <section class="tabs">
+    <div class="container">
+      <div id="tab-1" class="tab-item tab-border">
+        <!--reason there is an id is because we will use js to target this element because these tabs change when clicked, so we neeed to add event listeners, also a second class was added to target the red bottom border later on with js, as well-->
+        <i class="fas fa-door-open fa-3x"></i>
+        <p class="hide-sm">Cancel Anytime</p>
+        <!--we gave it a class of hide sm because gonna add a media query that will make this element disappear when in a small screen, will just show icon, will be used in js-->
+      </div>
+
+
+
+      <!--One main difference between the last two tabs from the first one is that first one has 2 classes, tab-border  -->
+
+
+      <div id="tab-2" class="tab-item">
+        <i class="fas fa-tablet-alt fa-3x"></i>
+        <p class="hide-sm">Watch anywhere</p>
+      </div>
+
+      <div id="tab-3" class="tab-item">
+        <i class="fas fa-tags fa-3x"></i>
+        <p class="hide-sm">Cancel anytime</p>
+      </div>
+    </div>
+  </section>
+  <!-- The contents of each individual tab in a section -->
+
+  <section class="tab-content">
+    <!-- each tab is contained in the same container -->
+    <div class="container">
+      <!-- Tab Content 1 -->
+
+      <!-- when we click on one of the tab icons its going to add a class of show to the current tab content, but in this case , we want to inherently always show the first tab content  -->
+      <div id="tab-1-content" class="tab-content-item show">
+        <div class="tab-1-content-inner">
+          <!-- this div is for the text, which encompasses one of the two grid items -->
+          <div>
+            <p class="text-lg">
+              If you decide Netflix isn't for you - no problem. No commitment. Cancel online anytime.
+            </p>
+            <a href="#" class="btn btn-lg">Watch free for 30 days</a>
+          </div>
+          <!-- this image is for the image itself, this is the second grid item from this .tab-content-1 grid  -->
+
+          <img src="../images/tab-content-1.png" alt="Unsub" />
+        </div>
+
+        <!-- tab 2 content -->
+
+        <div id="tab-2-content" class="tab-content-item">
+
+          <div class="tab-2-content-top">
+            <p class="text-lg">Watch TV shows and movies anytime, anywhere - personlized for you.</p>
+            <a href="" class="btn btn-lg">Watch Free For 30 Days</a>
+          </div>
+
+
+          <div class="tab-2-content-bottom">
+
+            <div>
+              <img src="images/tv_daredevil1.png" alt="">
+              <p class="text-md">Watch on your TV</p>
+              <p class="text-dark">Smart TVs, PlayStationm Xbox, Chromecast, Apple TV, Blu-ray players and more</p>
+            </div>
+
+            <div>
+              <img src="images/tabplet_phone_daredevil3.png" alt="">
+              <p class="text-md">Watch instantly or download for later</p>
+              <p class="text-dark">Available on phone and tablet, wherever you go.</p>
+            </div>
+
+
+            <div>
+              <img src="images/laptop_daredevil2.png" alt="">
+              <p class="text-md">Use any computer</p>
+              <p class="text-dark">Watch right on Netflix.com.</p>
+            </div>
+
+          </div>
+        </div>
+
+
+
+        <!-- tab 3 content -->
+        <div id="tab-3-content" class="tab-content-item">
+          <div class="text-center">
+            <p class="text-lg">Choose one plan and watch everything on Netflix</p>
+            <a href="" class="btn btn-lg">Watch Free For 30 Days</a>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Basic</th>
+                <th>Standard</th>
+                <th>Premium</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Monthly price after free month ends on 7/2/19</td>
+                <td>$8.99</td>
+                <td>$12.99</td>
+                <td>$15.99</td>
+              </tr>
+              <tr>
+                <td>HD available</td>
+                <td><i class="fas fa-times"></i></td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-check"></i></td>
+              </tr>
+              <tr>
+                <td>Ultra HD available</td>
+                <td><i class="fas fa-times"></i></td>
+                <td><i class="fas fa-times"></i></td>
+                <td><i class="fas fa-check"></i></td>
+              </tr>
+              <tr>
+                <td>Screens you can watch on at the same time</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>Watch on your laptop, TV, phone and tablet</td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-check"></i></td>
+              </tr>
+              <tr>
+                <td>Unlimited movies and TV shows</td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-check"></i></td>
+              </tr>
+              <tr>
+                <td>Cancel anytime</td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-check"></i></td>
+              </tr>
+              <tr>
+                <td>First month free</td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-check"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  </section>
+  </div>
+  </section>
+
+  <!-- the reason footer isn't contained in a container as the rest of the body is, is because we want the width to be a bit bigger than the rest of body. as a second thought, we probably could of set the width higher than 100% but this will suffice -->
+  <footer class="footer">
+    <p>Questions? Call 1-866-579-7172</p>
+    <div class="footer-cols">
+      <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Investor Relations</a></li>
+        <li><a href="#">Ways To Watch</a></li>
+        <li><a href="#">Corporate Information</a></li>
+        <li><a href="#">Netflix Originals</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#">Terms Of Use</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Account</a></li>
+        <li><a href="#">Redeem Gift Cards</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Speed Test</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Media Center</a></li>
+        <li><a href="#">Buy Gift Cards</a></li>
+        <li><a href="#">Cookie Preferences</a></li>
+        <li><a href="#">Legal Notices</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+
+
+</html>

@@ -1,0 +1,7 @@
+* I had a question regarding months ago regarding how a webpage can "expand" when a part of the project would take the whole space.
+
+  Admitely, I was working on a project poorly styled with ONLY grid. Was just starting to learn it. To my suprise, I ran out of space, and couldn't find an answer on how to "make more space available" so I don't have to cram everything inside the DOM.
+
+  In this project, I learned that if working with CSS units, such as viewport units(v), it will be relative to the content of the parents thus will allow you  to "cram" more content.
+
+  Here, it is shown with the header element with a showcase class, we assigned a 93 vh, so it pretty much took over the whole screen. As one progressed through the project, added more objects, such as the Font Awesome icon for the tab elements. That "expanded" the DOM.
